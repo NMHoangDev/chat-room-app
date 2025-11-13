@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import CallPage from "./pages/call-page/CallPage";
+import VideoCallPage from "./pages/call-video-page/VideoCallPage";
+import SignupForm from "./components/SignUpForm/SignUpForm";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Signup */}
+        <Route path="/signup" element={<SignupForm />} />
+
+        {/* Cuộc gọi */}
+        <Route path="/call" element={<CallPage />} />
+
+        {/* Cuộc họp (Video Call) */}
+        <Route path="/video-call" element={<VideoCallPage />} />
+      </Routes>
+    </Router>
   );
 }
 
