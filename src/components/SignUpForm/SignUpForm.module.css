@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+}
+
+.pageWrapper {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.left {
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.backgroundImage {
+    background-image: url('../../assets/background.jpg'), linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.caption {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 60px;
+    left: 50px;
+}
+
+.right {
+    width: 50%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.title {
+    font-size: 28px;
+    /* Giảm kích thước tiêu đề */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 380px;
+    /* Giảm kích thước form */
+}
+
+.input {
+    background-color: #f9fafb;
+    border: 1px solid #d1d5db;
+    padding: 12px;
+    /* Giảm padding */
+    margin-bottom: 15px;
+    /* Giảm khoảng cách giữa các input */
+    border-radius: 10px;
+    color: #333;
+    font-size: 14px;
+    /* Giảm font size */
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.input:focus {
+    border-color: #4C73E3;
+    outline: none;
+    box-shadow: 0 0 8px rgba(76, 115, 227, 0.3);
+}
+
+.submitButton {
+    background-color: #4C73E3;
+    border: none;
+    padding: 12px;
+    /* Giảm padding */
+    margin-top: 15px;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    /* Giảm font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submitButton:hover {
+    background-color: #365AC7;
+    transform: translateY(-2px);
+}
+
+.submitButton:active {
+    background-color: #2c478b;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkboxLabel {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.orText {
+    text-align: center;
+    margin: 20px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.orLine {
+    border-top: 1px solid #ccc;
+    width: 35%;
+    margin: 0 10px;
+}
+
+.socialButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.socialButton {
+    background-color: #eeeeee;
+    color: #333;
+    padding: 10px 18px;
+    /* Giảm padding */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    /* Giảm font size */
+    transition: background-color 0.3s ease;
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.socialButton:hover {
+    background-color: #ddd;
+}
+
+.socialButton:active {
+    background-color: #bbb;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .left {
+        height: 200px;
+    }
+
+    .backgroundImage {
+        height: 180px;
+        /* Điều chỉnh chiều cao cho phù hợp */
+    }
+
+    .caption {
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .form {
+        margin-top: 20px;
+    }
+
+    .submitButton,
+    .socialButton {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .caption {
+        font-size: 14px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .input {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .submitButton {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .socialButton {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}

@@ -1,14 +1,28 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import CallPage from "./pages/call-page/CallPage";
+import VideoCallPage from "./pages/call-video-page/VideoCallPage";
+import SignupForm from "./components/SignUpForm/SignUpForm";
+import ProfilePage from "./pages/profile/ProfilePage";
 import './App.css';
-import Profile from './pages/ProfileViewer.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Profile />
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Signup */}
+        <Route path="/signup" element={<SignupForm />} />
+
+        {/* Cuộc gọi */}
+        <Route path="/call" element={<CallPage />} />
+
+        {/* Cuộc họp (Video Call) */}
+        <Route path="/video-call" element={<VideoCallPage />} />
+
+        {/* Profile Page */}
+        <Route path="/profile" element={<ProfilePage />} />
+      </Routes>
+    </Router>
   );
 }
 
