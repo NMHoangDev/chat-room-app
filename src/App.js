@@ -4,6 +4,7 @@ import CallPage from "./pages/call-page/CallPage";
 import VideoCallPage from "./pages/call-video-page/VideoCallPage";
 import SignupForm from "./components/SignUpForm/SignUpForm";
 import ProfilePage from "./pages/profile/ProfilePage";
+import ChatBoxPage from "./pages/chatbox/Chatbox";
 import './App.css';
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
 
         {/* Profile Page */}
         <Route path="/profile" element={<ProfilePage />} />
+
+        {/* Chatbox Page */}
+        <Route path="/chatbox" element={<ChatBoxPage />} />
       </Routes>
     </Router>
   );

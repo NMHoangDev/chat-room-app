@@ -5,8 +5,8 @@ import styles from "./VideoCallPage.module.css";
 import { FaVideo } from "react-icons/fa";
 
 const VideoCallPage = () => {
-  const [meetingCode, setMeetingCode] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [meetingCode, setMeetingCode] = useState("");
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
@@ -22,13 +22,16 @@ const VideoCallPage = () => {
     }
   };
 
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <div className={styles.container}>
-      <Header toggleSidebar={toggleSidebar} />
-
+      <Header toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
       {/* MAIN LAYOUT */}
       <div className={styles.mainLayout}>
-        <Sidebar isSidebarOpen={isSidebarOpen} />
+        <Sidebar isSidebarOpen={isSidebarOpen} onClose={closeSidebar}/>
 
         <main
           className={`${styles.mainContent} ${

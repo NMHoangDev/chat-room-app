@@ -10,14 +10,18 @@ const CallPage = () => {
     setIsSidebarOpen((prev) => !prev);
   };
 
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <div className={styles.container}>
       {/* HEADER */}
-      <Header toggleSidebar={toggleSidebar} />
+      <Header toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}  />
 
       <div className={styles.mainLayout}>
         {/* SIDEBAR */}
-        <Sidebar isSidebarOpen={isSidebarOpen} />
+        <Sidebar isSidebarOpen={isSidebarOpen} onClose={closeSidebar}/>
 
         {/* MAIN CONTENT */}
         <main
