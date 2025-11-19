@@ -5,17 +5,26 @@ import {
   FaCog,
   FaEllipsisV,
   FaVideo,
+  FaBars,
 } from "react-icons/fa";
 import { IoMdPerson } from "react-icons/io";
 import styles from "./Header.module.css";
 
-const Header = ({ toggleSidebar }) => {
+const Header = ({ toggleSidebar, isSidebarOpen }) => {
+  const navigate = useNavigate();
+
+  const goToProfile = () => {
+    navigate("/profile"); 
+  };
   return (
     <header className={styles.header}>
       <div className={styles.headerLeft}>
-        <div className={styles.menuIcon} onClick={toggleSidebar}>
-          ☰
-        </div>
+        <button
+          className={`${styles.menuIcon} ${isSidebarOpen ? styles.menuOpen : ""}`}
+          onClick={toggleSidebar}
+        >
+          <FaBars />
+        </button>
         <div className={styles.logo}>
           <FaVideo className={styles.logoIcon} />
           <span className={styles.logoText}>Google Meet</span>
@@ -25,6 +34,12 @@ const Header = ({ toggleSidebar }) => {
       <div className={styles.headerCenter}>
         <div className={styles.searchBox}>
           <FaSearch className={styles.searchIcon} />
+
+          <input
+            type="text"
+            placeholder="Search "
+            className={styles.searchInput}
+          />
         </div>
       </div>
 
