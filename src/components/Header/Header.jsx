@@ -8,7 +8,6 @@ import {
   FaBars,
 } from "react-icons/fa";
 import { IoMdPerson } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 
 const Header = ({ toggleSidebar, isSidebarOpen }) => {
@@ -56,7 +55,7 @@ const Header = ({ toggleSidebar, isSidebarOpen }) => {
           <button className={styles.iconBtn}>
             <FaEllipsisV />
           </button>
-          <div className={styles.userAvatar} onClick={goToProfile}>
+          <div className={styles.userAvatar}>
             <IoMdPerson />
           </div>
         </div>
